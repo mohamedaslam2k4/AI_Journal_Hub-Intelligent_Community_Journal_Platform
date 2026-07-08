@@ -14,8 +14,8 @@ async def connect_to_mongo() -> None:
     db = get_database()
     await db.users.create_index("email", unique=True)
     await db.journals.create_index([("visibility", 1), ("moderation_status", 1), ("created_at", -1)])
+    await db.journals.create_index([("author_id", 1), ("updated_at", -1)])
     await db.ai_analysis.create_index("journal_id", unique=True)
-    await db.embeddings.create_index("journal_id", unique=True)
 
 async def close_mongo() -> None:
     if client:

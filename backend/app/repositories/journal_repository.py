@@ -21,6 +21,5 @@ class JournalRepository:
 
     async def delete(self, journal_id: str, owner_id: str) -> int:
         result = await self.db.journals.delete_one({"_id": ObjectId(journal_id), "author_id": owner_id})
-        await self.db.embeddings.delete_one({"journal_id": journal_id})
         await self.db.ai_analysis.delete_one({"journal_id": journal_id})
         return result.deleted_count
