@@ -1,0 +1,3 @@
+import { Link, Outlet } from 'react-router-dom';
+import { useAuth } from '../state/AuthContext.jsx';
+export function Layout() { const { isAuthenticated, setToken } = useAuth(); return <div><nav className="mx-auto flex max-w-6xl items-center justify-between p-5"><Link className="text-2xl font-bold" to="/">AI Journal Hub</Link><div className="flex gap-3"><Link to="/analytics">Analytics</Link><Link to="/search">AI Search</Link>{isAuthenticated ? <button onClick={()=>setToken(null)}>Logout</button> : <><Link to="/login">Login</Link><Link to="/register">Register</Link></>}</div></nav><main className="mx-auto max-w-6xl p-5"><Outlet /></main></div>; }

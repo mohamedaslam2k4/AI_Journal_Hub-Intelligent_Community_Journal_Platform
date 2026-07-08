@@ -1,0 +1,1 @@
+{"scripts":{"dev":"vite --host 0.0.0.0","build":"vite build","lint":"eslint src --ext .js,.jsx"},"dependencies":{"@vitejs/plugin-react":"latest","vite":"latest","react":"latest","react-dom":"latest","react-router-dom":"latest","axios":"latest","lucide-react":"latest"},"devDependencies":{"tailwindcss":"latest","postcss":"latest","autoprefixer":"latest","eslint":"latest"}}
